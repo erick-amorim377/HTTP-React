@@ -1,4 +1,5 @@
-import { useState, useEffect, use } from 'react'
+import { useState, useEffect } from 'react'
+import { useFetch } from './hook/useFetch';
 import './App.css'
 
 const url = "http://localhost:3001/products";
@@ -7,17 +8,12 @@ function App() {
   const [products, setProducts] = useState([])
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
+  
 
-  useEffect(() => {
-    //jeito mais correto:
-    async function fetchData() {
-      const response = await fetch(url) // traz mas em texto puro.
-      const data = await response.json()// aqui transforma em objeto, assim dando pra usar no javascript
-      setProducts(data);
-      console.log(data);
-    }
-    fetchData();
-   }, []);
+  const { data:items } = useFetch(url);
+
+
+
 
    const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,7 +41,7 @@ function App() {
     <>
       <h1>Lista de produtos</h1>
       <ul>
-        {products.map((products) => (
+        {items && items.map((products) => (
           <li key={products.id}>{products.name} = R$ {products.price}</li>
         ))}
       </ul>
