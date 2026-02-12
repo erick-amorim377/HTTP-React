@@ -10,7 +10,7 @@ function App() {
   const [price, setPrice] = useState("");
   
 
-  const { data:items } = useFetch(url);
+  const { data:items, httpConfig } = useFetch(url);
 
 
 
@@ -23,16 +23,7 @@ function App() {
       price
     };
 
-    const response = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(product),
-    });
-    const addedProduct = await response.json()
-
-    setProducts((prevProducts) => [...prevProducts, addedProduct]);
+    httpConfig(product, "POST");
     setName("");
     setPrice("");
    }

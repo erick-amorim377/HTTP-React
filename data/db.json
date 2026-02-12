@@ -24,6 +24,16 @@
       "id": "4f06",
       "name": "Mouse Pad",
       "price": "59,99"
+    },
+    {
+      "id": "59a9",
+      "name": "Placa de Video",
+      "price": "1500"
+    },
+    {
+      "id": "0fc8",
+      "name": "SSD",
+      "price": "350"
     }
   ]
 }
