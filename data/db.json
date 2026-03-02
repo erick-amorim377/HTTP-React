@@ -39,6 +39,16 @@
       "id": "f748",
       "name": "Cabo HDMI",
       "price": "20"
+    },
+    {
+      "id": "abe4",
+      "name": "Suporte de Monitor",
+      "price": "80"
+    },
+    {
+      "id": "f4eb",
+      "name": "Suporte de Microfone",
+      "price": "70"
     }
   ]
 }
