@@ -34,6 +34,11 @@
       "id": "0fc8",
       "name": "SSD",
       "price": "350"
+    },
+    {
+      "id": "f748",
+      "name": "Cabo HDMI",
+      "price": "20"
     }
   ]
 }

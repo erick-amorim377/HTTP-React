@@ -10,7 +10,7 @@ function App() {
   const [price, setPrice] = useState("");
   
 
-  const { data:items, httpConfig } = useFetch(url);
+  const { data:items, httpConfig, loading } = useFetch(url);
 
 
 
@@ -31,11 +31,13 @@ function App() {
   return (
     <>
       <h1>Lista de produtos</h1>
+      {loading && <p>Carregando dados...</p>}
+      {!loading && (      
       <ul>
         {items && items.map((products) => (
           <li key={products.id}>{products.name} = R$ {products.price}</li>
         ))}
-      </ul>
+      </ul>)}
       <div className="addProduct">
         <form onSubmit={handleSubmit}>
           <label>
