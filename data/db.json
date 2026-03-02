@@ -49,6 +49,11 @@
       "id": "f4eb",
       "name": "Suporte de Microfone",
       "price": "70"
+    },
+    {
+      "id": "54ca",
+      "name": "Microfone",
+      "price": "150"
     }
   ]
 }

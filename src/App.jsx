@@ -10,7 +10,7 @@ function App() {
   const [price, setPrice] = useState("");
   
 
-  const { data:items, httpConfig, loading } = useFetch(url);
+  const { data:items, httpConfig, loading, error } = useFetch(url);
 
 
 
@@ -32,7 +32,8 @@ function App() {
     <>
       <h1>Lista de produtos</h1>
       {loading && <p>Carregando dados...</p>}
-      {!loading && (      
+      {error && <p>{error}</p>}
+      {!error && (      
       <ul>
         {items && items.map((products) => (
           <li key={products.id}>{products.name} = R$ {products.price}</li>
